@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>2D Drag Race</title>
+  <link rel="shortcut icon" href="Maazlogo.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="top-controls">
+    <div class="difficulty-container">
+      <label for="difficulty">Difficulty:</label>
+      <select id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium" selected>Medium</option>
+        <option value="hard">Hard</option>
+        <option value="impossible">Impossible</option>
+      </select>
+    </div>
+
+    <div class="car-select-container">
+      <button onclick="window.location.href='carSelect.html'">Select Car</button>
+    </div>
+  </div>
+
+  <!-- Race Progress Indicator -->
+  <!-- Single-Line Progress Tracker -->
+  <div class="progress-wrapper">
+  <div class="progress-group">
+    <span class="label">P1</span>
+    <div class="progress-bar">
+      <div id="p1-progress" class="progress-fill p1-fill"></div>
+    </div>
+  </div>
+  <div class="progress-group">
+    <span class="label">COM</span>
+    <div class="progress-bar">
+      <div id="com-progress" class="progress-fill com-fill"></div>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <div class="race-track-container">
+    <!-- Road tiles -->
+    <img src="assets/track/road.jpg" class="road" alt="Road Image" />
+    <img src="assets/track/road.jpg" class="road" alt="Road Image" />
+    <img src="assets/track/road.jpg" class="road" alt="Road Image" />
+    <img src="assets/track/road.jpg" class="road" alt="Road Image" />
+    <img src="assets/track/road.jpg" class="road" alt="Road Image" />
+    <img src="assets/track/road.jpg" class="road" alt="Road Image" />
+    <img src="assets/track/road.jpg" class="road" alt="Road Image" />
+    <img src="assets/track/road.jpg" class="road" alt="Road Image" />
+    <img src="assets/track/road.jpg" class="road" alt="Road Image" />
+    <img src="assets/track/road.jpg" class="road" alt="Road Image" />
+    <img src="assets/track/road.jpg" class="road" alt="Road Image" />
+    <img src="assets/track/road.jpg" class="road" alt="Road Image" />
+    <img src="assets/track/road.jpg" class="road" alt="Road Image" />
+    <img src="assets/track/road.jpg" class="road" alt="Road Image" />
+    <img src="assets/track/road.jpg" class="road" alt="Road Image" />
+    <img src="assets/track/road.jpg" class="road" alt="Road Image" />
+    <img src="assets/track/road.jpg" class="road" alt="Road Image" />
+    <img src="assets/track/road.jpg" class="road" alt="Road Image" />
+    <img src="assets/track/road.jpg" class="road" alt="Road Image" />
+    <img src="assets/track/road.jpg" class="road" alt="Road Image" />
+    <img src="assets/track/road.jpg" class="road" alt="Road Image" />
+
+    <!-- Finish line -->
+    <img src="assets/track/finishLine.png" class="finish-line" alt="Finish Line" />
+
+    <!-- Cars -->
+    <img id="P1" src="assets/cars/mclaren-removebg-preview.png" class="bugatti" alt="McLaren" />
+    <img id="P2" src="assets/cars/bugatti-removebg-preview.png" class="mclaren" alt="Bugatti" />
+
+    <!-- NOS flame in front McLaren -->
+    <img id="NOS1" src="assets/animation/NOS.png" alt="NOS Flame" />
+  </div>
+
+  <script>
+    const userCar = document.getElementById('P1');
+    const nosFlame = document.getElementById('NOS1');
+
+    function updateNOSPosition() {
+      const userLeft = parseInt(userCar.style.left || 100);
+      nosFlame.style.left = (userLeft - 20) + 'px'; // Align it a bit behind
+    }
+
+    function toggleNOS(on) {
+      nosFlame.style.display = on ? 'block' : 'none';
+    }
+
+    // Expose for Car.js to use
+    window.updateNOSPosition = updateNOSPosition;
+    window.toggleNOS = toggleNOS;
+  </script>
+
+  <script src="Car.js"></script>
+</body>
+</html>

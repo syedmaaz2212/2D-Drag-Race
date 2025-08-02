@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Select Your Car</title>
+  <link rel="shortcut icon" href="Maazlogo.ico" type="image/x-icon">
+  <style>
+    body {
+      background-color: #121212;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    .car-options {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .car {
+      border: 2px solid transparent;
+      border-radius: 8px;
+      padding: 10px;
+      transition: transform 0.2s, border 0.3s;
+      cursor: pointer;
+    }
+
+    .car:hover {
+      transform: scale(1.05);
+      border: 2px solid white;
+    }
+
+    .car img {
+      width: 300px;
+      height: auto;
+    }
+
+    /* Back button styling */
+    button.back {
+    margin-top: 40px;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #ffcc00;
+    color: #000;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.6);
+    transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button.back:hover {
+    background-color: #e6b800;
+    transform: scale(1.05);
+    }
+
+    /* Car name font styling */
+    .car p {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    margin-top: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 5px black;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Select Your Car</h1>
+<div class="car-options">
+  <div class="car" onclick="selectCar('koeniggsegg-removebg-preview.png')">
+    <img src="assets/cars/koeniggsegg-removebg-preview.png" alt="Car 1" />
+    <p>Grim Reaper</p>
+  </div>
+  <div class="car" onclick="selectCar('mclaren-removebg-preview.png')">
+    <img src="assets/cars/mclaren-removebg-preview.png" alt="Car 2" />
+    <p>Stormy</p>
+  </div>
+  <div class="car" onclick="selectCar('Pagani-removebg-preview.png')">
+    <img src="assets/cars/Pagani-removebg-preview.png" alt="Car 3" />
+    <p>Vampiro de Scaro</p>
+  </div>
+  <div class="car" onclick="selectCar('BMW-removebg-preview.png')">
+    <img src="assets/cars/BMW-removebg-preview.png" alt="Car 4" />
+    <p>Asmodeus</p>
+  </div>
+  <div class="car" onclick="selectCar('coche-removebg-preview.png')">
+   <img src="assets/cars/coche-removebg-preview.png" alt="Car 5" />
+    <p>Golem</p>
+  </div>
+  <div class="car" onclick="selectCar('lamborghini_aventador-removebg-preview.png')">
+    <img src="assets/cars/lamborghini_aventador-removebg-preview.png" alt="Car 6" />
+    <p>Leviathan</p>
+  </div>
+  <div class="car" onclick="selectCar('lamborghini_sian-removebg-preview.png')">
+    <img src="assets/cars/lamborghini_sian-removebg-preview.png" alt="Car 7" />
+    <p>Ghost Lilith</p>
+  </div>
+</div>
+
+<button class="back" onclick="window.location.href='index.html'">Back to Game</button>
+
+<script>
+  function selectCar(image) {
+    localStorage.setItem('selectedCar', image);
+    alert('Car selected!');
+    window.location.href = 'index.html'; // Redirect back to game
+  }
+</script>
+
+</body>
+</html>
