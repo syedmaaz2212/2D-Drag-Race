@@ -52,8 +52,8 @@ A fast-paced, NOS-powered 2D drag racing game built using **HTML**, **CSS**, and
 
 ## 📷 Screenshots
 
-![Car Select Preview](assets/preview.gif)
-![Game Preview](assets/preview.gif)
+![Car Select Preview](assets/preview2.png)
+![Game Preview](assets/preview1.png)
 
 
 ---
